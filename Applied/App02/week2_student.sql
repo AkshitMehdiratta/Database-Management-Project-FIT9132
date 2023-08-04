@@ -2,9 +2,9 @@
 Databases Week 2 Applied
 week2_student.sql
 
-student id:
-student name:
-last modified date:
+student id: 34165479
+student name: Akshit Mehdiratta
+last modified date: 04/08/2023
 
 */
 
