@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4452453F-567C-A853-058E-DD3DEBB4973B" name="PRODUCT">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:12:49 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="41951C02-96E1-C928-BF2F-97C23C7EB26A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="prod_no" id="7203C21C-2DD3-63F3-07FB-C3F658B6B334">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:13:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product number]]></commentInRDBMS>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="41951C02-96E1-C928-BF2F-97C23C7EB26A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prod_desc" id="B0A60C3F-99EA-47E0-6262-E756A6BA4CDC">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:13:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product Description]]></commentInRDBMS>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="41951C02-96E1-C928-BF2F-97C23C7EB26A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prod_unitprice" id="F18ED7B0-855D-8856-4ABD-8662CBDBE2A8">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:14:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[product unit price]]></commentInRDBMS>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="41951C02-96E1-C928-BF2F-97C23C7EB26A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prod_category" id="45CD62DB-97A6-810A-5280-F5F25911C159">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:14:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[product category]]></commentInRDBMS>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="41951C02-96E1-C928-BF2F-97C23C7EB26A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>
