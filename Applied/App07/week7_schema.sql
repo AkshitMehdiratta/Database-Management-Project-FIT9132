@@ -14,10 +14,12 @@ Author: Akshit Mehdiratta
 -- Place DROP commands at head of schema file
 --
 
-
 -- Create Tables
 -- Here using both table and column constraints
 --
+
+set echo on
+spool week7_schema_output.txt
 
 DROP TABLE student CASCADE CONSTRAINTS PURGE;
 
@@ -63,7 +65,7 @@ COMMENT ON COLUMN unit.unit_name IS
 
 ALTER TABLE unit ADD CONSTRAINT unit_pk PRIMARY KEY ( unit_code );
 
-alter table unit add constraint unit_uq
+ALTER TABLE unit ADD constraint unit_uq
 /* Add ENROLMENT attributes and data types here */
 
 CREATE TABLE enrolment (
@@ -100,15 +102,17 @@ ALTER TABLE enrolment
                                               unit_code,
                                               enrol_year,
                                               enrol_semester );
-                                              
-                                              
+
 ALTER TABLE enrolment
     ADD CONSTRAINT student_enrolment_fk FOREIGN KEY ( stu_nbr )
         REFERENCES student ( stu_nbr );
-        
+
 ALTER TABLE enrolment
     ADD CONSTRAINT unit_enrolment_fk FOREIGN KEY ( unit_code )
         REFERENCES unit ( unit_code );
-        
+
 ALTER TABLE enrolment
     ADD CONSTRAINT enrolment_ck CHECK ( enrol_semester IN ( '1', '2', '3' ) );
+
+spool off
+set echo off

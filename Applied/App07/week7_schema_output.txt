@@ -1,0 +1,220 @@
+SQL> 
+SQL> DROP TABLE student CASCADE CONSTRAINTS PURGE;
+
+Table STUDENT dropped.
+
+SQL> 
+SQL> CREATE TABLE student (
+  2      stu_nbr   NUMBER(8) NOT NULL,
+  3      stu_lname VARCHAR2(50) NOT NULL,
+  4      stu_fname VARCHAR2(50) NOT NULL,
+  5      stu_dob   DATE NOT NULL
+  6  );
+
+Table STUDENT created.
+
+SQL> 
+SQL> COMMENT ON COLUMN student.stu_nbr IS
+  2      'Student number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN student.stu_lname IS
+  2      'Student last name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN student.stu_fname IS
+  2      'Student first name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN student.stu_dob IS
+  2      'Student date of birth';
+
+Comment created.
+
+SQL> 
+SQL> /* Add STUDENT constraints here */
+SQL> ALTER TABLE student ADD CONSTRAINT student_pk PRIMARY KEY ( stu_nbr );
+
+Table STUDENT altered.
+
+SQL> 
+SQL> ALTER TABLE student ADD CONSTRAINT student_chk CHECK ( stu_nbr > 10000000 );
+
+Table STUDENT altered.
+
+SQL> 
+SQL> --- stu_nbr > 10000000
+SQL> 
+SQL> /* Add UNIT data types here */
+SQL> CREATE TABLE unit (
+  2      unit_code CHAR(7) NOT NULL,
+  3      unit_name VARCHAR2(50) NOT NULL
+  4  );
+
+Error starting at line : 53 in command -
+CREATE TABLE unit (
+    unit_code CHAR(7) NOT NULL,
+    unit_name VARCHAR2(50) NOT NULL
+)
+Error report -
+ORA-00955: name is already used by an existing object
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> 
+SQL> COMMENT ON COLUMN unit.unit_code IS
+  2      'Unit code';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN unit.unit_name IS
+  2      'Unit name';
+
+Comment created.
+
+SQL> 
+SQL> /* Add UNIT constraints here */
+SQL> 
+SQL> ALTER TABLE unit ADD CONSTRAINT unit_pk PRIMARY KEY ( unit_code );
+
+Error starting at line : 66 in command -
+ALTER TABLE unit ADD CONSTRAINT unit_pk PRIMARY KEY ( unit_code )
+Error report -
+ORA-02260: table can have only one primary key
+02260. 00000 -  "table can have only one primary key"
+*Cause:    Self-evident.
+*Action:   Remove the extra primary key.
+SQL> 
+SQL> ALTER TABLE unit ADD constraint unit_uq
+  2  /* Add ENROLMENT attributes and data types here */
+  3  
+  4  CREATE TABLE enrolment (
+  5      stu_nbr        NUMBER(8) NOT NULL,
+  6      unit_code      CHAR(7) NOT NULL,
+  7      enrol_year     NUMBER(4) NOT NULL,
+  8      enrol_semester CHAR(1) NOT NULL,
+  9      enrol_mark     NUMBER(3),
+ 10      enrol_grade    CHAR(2)
+ 11  );
+
+Error starting at line : 68 in command -
+ALTER TABLE unit ADD constraint unit_uq
+/* Add ENROLMENT attributes and data types here */
+
+CREATE TABLE enrolment (
+    stu_nbr        NUMBER(8) NOT NULL,
+    unit_code      CHAR(7) NOT NULL,
+    enrol_year     NUMBER(4) NOT NULL,
+    enrol_semester CHAR(1) NOT NULL,
+    enrol_mark     NUMBER(3),
+    enrol_grade    CHAR(2)
+)
+Error report -
+ORA-00904: : invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+SQL> 
+SQL> COMMENT ON COLUMN enrolment.stu_nbr IS
+  2      'Student number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN enrolment.unit_code IS
+  2      'Unit code';
+
+Error starting at line : 83 in command -
+COMMENT ON COLUMN enrolment.unit_code IS
+    'Unit code'
+Error report -
+ORA-00904: "UNIT_CODE": invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+SQL> 
+SQL> COMMENT ON COLUMN enrolment.enrol_year IS
+  2      'Enrolment year';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN enrolment.enrol_semester IS
+  2      'Enrolment semester';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN enrolment.enrol_mark IS
+  2      'Enrolment mark (real)';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN enrolment.enrol_grade IS
+  2      'Enrolment grade (letter)';
+
+Comment created.
+
+SQL> 
+SQL> /* Add ENROLMENT constraints here */
+SQL> 
+SQL> ALTER TABLE enrolment
+  2      ADD CONSTRAINT enrolment_pk PRIMARY KEY ( stu_nbr,
+  3                                                unit_code,
+  4                                                enrol_year,
+  5                                                enrol_semester );
+
+Error starting at line : 100 in command -
+ALTER TABLE enrolment
+    ADD CONSTRAINT enrolment_pk PRIMARY KEY ( stu_nbr,
+                                              unit_code,
+                                              enrol_year,
+                                              enrol_semester )
+Error report -
+ORA-00904: "UNIT_CODE": invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+SQL> 
+SQL> ALTER TABLE enrolment
+  2      ADD CONSTRAINT student_enrolment_fk FOREIGN KEY ( stu_nbr )
+  3          REFERENCES student ( stu_nbr );
+
+Table ENROLMENT altered.
+
+SQL> 
+SQL> ALTER TABLE enrolment
+  2      ADD CONSTRAINT unit_enrolment_fk FOREIGN KEY ( unit_code )
+  3          REFERENCES unit ( unit_code );
+
+Error starting at line : 110 in command -
+ALTER TABLE enrolment
+    ADD CONSTRAINT unit_enrolment_fk FOREIGN KEY ( unit_code )
+        REFERENCES unit ( unit_code )
+Error report -
+ORA-00904: "UNIT_CODE": invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+SQL> 
+SQL> ALTER TABLE enrolment
+  2      ADD CONSTRAINT enrolment_ck CHECK ( enrol_semester IN ( '1', '2', '3' ) );
+
+Error starting at line : 114 in command -
+ALTER TABLE enrolment
+    ADD CONSTRAINT enrolment_ck CHECK ( enrol_semester IN ( '1', '2', '3' ) )
+Error report -
+ORA-02264: name already used by an existing constraint
+02264. 00000 -  "name already used by an existing constraint"
+*Cause:    The specified constraint name has to be unique.
+*Action:   Specify a unique constraint name for the constraint.
+SQL> 
+SQL> spool off
