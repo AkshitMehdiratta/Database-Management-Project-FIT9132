@@ -15,18 +15,17 @@ Author: Akshit Mehdiratta
 --
 
 
-
 -- Create Tables
 -- Here using both table and column constraints
 --
 
-drop table student cascade constraints PURGE;
+DROP TABLE student CASCADE CONSTRAINTS PURGE;
 
 CREATE TABLE student (
-    stu_nbr     NUMBER(8) NOT NULL,
-    stu_lname   VARCHAR2(50) NOT NULL,
-    stu_fname   VARCHAR2(50) NOT NULL,
-    stu_dob     DATE NOT NULL
+    stu_nbr   NUMBER(8) NOT NULL,
+    stu_lname VARCHAR2(50) NOT NULL,
+    stu_fname VARCHAR2(50) NOT NULL,
+    stu_dob   DATE NOT NULL
 );
 
 COMMENT ON COLUMN student.stu_nbr IS
@@ -42,11 +41,16 @@ COMMENT ON COLUMN student.stu_dob IS
     'Student date of birth';
 
 /* Add STUDENT constraints here */
+ALTER TABLE student ADD CONSTRAINT student_pk PRIMARY KEY ( stu_nbr );
+
+ALTER TABLE student ADD CONSTRAINT student_chk CHECK ( stu_nbr > 10000000 );
+
+--- stu_nbr > 10000000
 
 /* Add UNIT data types here */
 CREATE TABLE unit (
-    unit_code  char(7) NOT NULL,
-    unit_name  VARCHAR2(50) NOT NULL 
+    unit_code CHAR(7) NOT NULL,
+    unit_name VARCHAR2(50) NOT NULL
 );
 
 COMMENT ON COLUMN unit.unit_code IS
@@ -57,13 +61,16 @@ COMMENT ON COLUMN unit.unit_name IS
 
 /* Add UNIT constraints here */
 
+ALTER TABLE unit ADD CONSTRAINT unit_pk PRIMARY KEY ( unit_code );
+
+alter table unit add constraint unit_uq
 /* Add ENROLMENT attributes and data types here */
 
 CREATE TABLE enrolment (
-    stu_nbr        NUMBER(8) not null,
-    unitcode       CHAR(7) not null,
-    enrol_year     NUMBER(4) not null,
-    enrol_semester CHAR(1) not null,
+    stu_nbr        NUMBER(8) NOT NULL,
+    unit_code      CHAR(7) NOT NULL,
+    enrol_year     NUMBER(4) NOT NULL,
+    enrol_semester CHAR(1) NOT NULL,
     enrol_mark     NUMBER(3),
     enrol_grade    CHAR(2)
 );
@@ -87,3 +94,21 @@ COMMENT ON COLUMN enrolment.enrol_grade IS
     'Enrolment grade (letter)';
 
 /* Add ENROLMENT constraints here */
+
+ALTER TABLE enrolment
+    ADD CONSTRAINT enrolment_pk PRIMARY KEY ( stu_nbr,
+                                              unit_code,
+                                              enrol_year,
+                                              enrol_semester );
+                                              
+                                              
+ALTER TABLE enrolment
+    ADD CONSTRAINT student_enrolment_fk FOREIGN KEY ( stu_nbr )
+        REFERENCES student ( stu_nbr );
+        
+ALTER TABLE enrolment
+    ADD CONSTRAINT unit_enrolment_fk FOREIGN KEY ( unit_code )
+        REFERENCES unit ( unit_code );
+        
+ALTER TABLE enrolment
+    ADD CONSTRAINT enrolment_ck CHECK ( enrol_semester IN ( '1', '2', '3' ) );
