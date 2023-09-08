@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CB0D299C-CE7E-58FB-1935-A81335CCBC2B" name="PRODUCT">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:27:32 UTC</createdTime>
+<generatorID>4452453F-567C-A853-058E-DD3DEBB4973B</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="prod_no" id="BA64BBA7-D146-2AF2-AC1B-7F750BD155B7">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product number]]></commentInRDBMS>
+<generatorID>7203C21C-2DD3-63F3-07FB-C3F658B6B334</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prod_desc" id="C3A3D03E-EF29-A654-1E9C-5AC582E1166B">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product Description]]></commentInRDBMS>
+<generatorID>B0A60C3F-99EA-47E0-6262-E756A6BA4CDC</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prod_unitprice" id="66E3D385-AF25-F5B2-EF18-E4A3F440A0D8">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[product unit price]]></commentInRDBMS>
+<generatorID>F18ED7B0-855D-8856-4ABD-8662CBDBE2A8</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prod_category" id="26E276D3-AA2A-EC41-0F0A-F472925210D8">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[product category]]></commentInRDBMS>
+<generatorID>45CD62DB-97A6-810A-5280-F5F25911C159</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_ID" id="F5335504-49C6-09FF-0BCF-972487585479">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:27:32 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="89120D06-97D0-3AF9-BF39-F4C1814C6042" name="PRODUCT_PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:27:32 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="F5335504-49C6-09FF-0BCF-972487585479"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="872F0409-D239-3777-8ABE-F96EC0F0DCBF" name="PRODUCT_PKv1">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-01 07:32:47 UTC</createdTime>
+<generatorID>C417220F-BAC2-F9C2-73D4-57EDDE4DEAA7</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>
