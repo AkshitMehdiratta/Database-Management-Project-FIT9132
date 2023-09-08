@@ -20,6 +20,8 @@ Author: Akshit Mehdiratta
 -- Here using both table and column constraints
 --
 
+drop table student cascade constraints PURGE;
+
 CREATE TABLE student (
     stu_nbr     NUMBER(8) NOT NULL,
     stu_lname   VARCHAR2(50) NOT NULL,
@@ -43,8 +45,8 @@ COMMENT ON COLUMN student.stu_dob IS
 
 /* Add UNIT data types here */
 CREATE TABLE unit (
-    unit_code   ,
-    unit_name   
+    unit_code  char(7) NOT NULL,
+    unit_name  VARCHAR2(50) NOT NULL 
 );
 
 COMMENT ON COLUMN unit.unit_code IS
@@ -56,13 +58,14 @@ COMMENT ON COLUMN unit.unit_name IS
 /* Add UNIT constraints here */
 
 /* Add ENROLMENT attributes and data types here */
+
 CREATE TABLE enrolment (
-    ,
-    ,
-    ,
-    ,
-    ,
-    
+    stu_nbr        NUMBER(8) not null,
+    unitcode       CHAR(7) not null,
+    enrol_year     NUMBER(4) not null,
+    enrol_semester CHAR(1) not null,
+    enrol_mark     NUMBER(3),
+    enrol_grade    CHAR(2)
 );
 
 COMMENT ON COLUMN enrolment.stu_nbr IS
