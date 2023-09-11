@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0F28384A-791F-6E72-42E1-068C34D0A791" name="PROPERTY">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>279D80D4-0137-5FC4-0619-BFD41BAD3691</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="prop_no" id="244FD118-564A-2705-9518-79DBCAABE83A">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[property number]]></commentInRDBMS>
+<generatorID>6FA564D1-74CF-A3F2-0042-EF4EBB407D92</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prop_address" id="67362DBD-CA0A-4C0F-821D-CB10834E4BE3">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[property address]]></commentInRDBMS>
+<generatorID>0AF97951-5340-EE48-DD9F-3B71150D76AF</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prop_value" id="1A2DCB82-797C-9EF5-E5CF-7BB3E7F8A3CA">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[value of property]]></commentInRDBMS>
+<generatorID>526BEBE3-5A48-0801-A55C-B5F46CE770F6</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<ownDataTypeParameters>,15,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="owner_no1" id="7716AB6F-42BE-31A8-15B4-5C04A98FD2A4">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[owner number]]></commentInRDBMS>
+<generatorID>1D08C07B-01E9-D231-0950-AE62AE476C75</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="792D4123-F9A7-B1A5-BE47-772728B1B53F" referredColumn="7B2D0709-AB75-25F0-F3EA-1E3F3509AE91"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E4AA977-4964-1904-1C5E-0ACE37FF9E02" name="PROPERTY_PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>FB8A0737-12ED-F8D6-1451-7552C46ACABB</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="244FD118-564A-2705-9518-79DBCAABE83A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B1209B4F-B43A-BB8E-AD0D-32032DE5CB7E" name="Relation_3">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>A616C7F2-3276-E001-6E93-7BD9C8A65F09</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7716AB6F-42BE-31A8-15B4-5C04A98FD2A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

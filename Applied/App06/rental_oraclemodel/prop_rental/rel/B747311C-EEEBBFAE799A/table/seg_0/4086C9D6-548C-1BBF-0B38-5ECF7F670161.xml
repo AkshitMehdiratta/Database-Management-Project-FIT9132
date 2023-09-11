@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4086C9D6-548C-1BBF-0B38-5ECF7F670161" name="PAYMETHOD">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>45F80F5B-BB5F-1F91-FCA3-A12EA286EB9F</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="paymethod_id" id="2A719702-1C97-DF21-1648-E77187B39C97">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[paymethod_id]]></commentInRDBMS>
+<generatorID>A5C31B20-517A-DAA1-4BC7-79C0E889BCA8</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="paymethod_name" id="8FE48A32-5CF0-4181-5993-F22035777C33">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[pay method type]]></commentInRDBMS>
+<generatorID>0999A925-321B-0E4E-CDC0-5A261A35C9AE</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E8AF78F-AC0C-76BE-F723-81114E56CBD9" name="PAYMETHOD_PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>A18DEB02-F7E2-99AA-C1BA-D167D4CCA7DF</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A719702-1C97-DF21-1648-E77187B39C97"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

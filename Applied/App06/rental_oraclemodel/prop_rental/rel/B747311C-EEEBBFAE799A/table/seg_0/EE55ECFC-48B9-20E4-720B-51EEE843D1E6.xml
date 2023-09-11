@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EE55ECFC-48B9-20E4-720B-51EEE843D1E6" name="MAINTENANCE">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>8FD3DC99-2DC1-586A-A6C3-C4DCD328972D</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="prop_no1" id="998B9586-5FA7-4B6A-EF17-1D71E24E7C42">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[property number]]></commentInRDBMS>
+<generatorID>53B7D8E7-283F-711C-7672-FD416B843844</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E9FAE914-69D6-BBD2-B3BA-3A422F0693CF" referredColumn="244FD118-564A-2705-9518-79DBCAABE83A"/>
+</associations>
+</Column>
+<Column name="maint_desc" id="4806B47C-CB1C-91AD-85F3-448E2F5FD742">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[maintenence description]]></commentInRDBMS>
+<generatorID>15F94FAE-4DE9-BD08-4078-32BD6C265604</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="maint_datetime" id="BE8E8C56-D715-FD51-6775-A4AAB4EB0F53">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[maintanence date and time]]></commentInRDBMS>
+<generatorID>AF23D4C4-C629-F4B3-7154-EB6DB02A86D9</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="maint_cost" id="E8D7DE4D-A3F1-66A7-226A-006DC396CD79">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[maintanence cost]]></commentInRDBMS>
+<generatorID>D2456338-1BA1-525D-3B59-49514BA82420</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BA3345D7-8831-0691-8982-51F53C6023CA" name="MAINTENANCE_PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>28B4E1A4-373F-5778-0DB6-69D8BFB19426</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE8E8C56-D715-FD51-6775-A4AAB4EB0F53"/>
+<colUsage columnID="998B9586-5FA7-4B6A-EF17-1D71E24E7C42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FAB26DDD-2288-BD4F-3587-2A0515E15B32" name="property_maint">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:15:21 UTC</createdTime>
+<generatorID>23A3FDBE-FACB-CE94-5A95-B0B028C2A3A9</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="998B9586-5FA7-4B6A-EF17-1D71E24E7C42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

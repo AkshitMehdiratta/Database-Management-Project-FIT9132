@@ -65,7 +65,7 @@ COMMENT ON COLUMN unit.unit_name IS
 
 ALTER TABLE unit ADD CONSTRAINT unit_pk PRIMARY KEY ( unit_code );
 
-ALTER TABLE unit ADD constraint unit_uq
+ALTER TABLE unit ADD constraint unit_uq unique (unit_name);
 /* Add ENROLMENT attributes and data types here */
 
 CREATE TABLE enrolment (

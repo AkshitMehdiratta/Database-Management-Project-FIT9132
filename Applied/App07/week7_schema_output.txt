@@ -92,22 +92,22 @@ ORA-02260: table can have only one primary key
 *Cause:    Self-evident.
 *Action:   Remove the extra primary key.
 SQL> 
-SQL> ALTER TABLE unit ADD constraint unit_uq
-  2  /* Add ENROLMENT attributes and data types here */
-  3  
-  4  CREATE TABLE enrolment (
-  5      stu_nbr        NUMBER(8) NOT NULL,
-  6      unit_code      CHAR(7) NOT NULL,
-  7      enrol_year     NUMBER(4) NOT NULL,
-  8      enrol_semester CHAR(1) NOT NULL,
-  9      enrol_mark     NUMBER(3),
- 10      enrol_grade    CHAR(2)
- 11  );
+SQL> ALTER TABLE unit ADD constraint unit_uq unique (unit_name);
 
-Error starting at line : 68 in command -
-ALTER TABLE unit ADD constraint unit_uq
-/* Add ENROLMENT attributes and data types here */
+Table UNIT altered.
 
+SQL> /* Add ENROLMENT attributes and data types here */
+SQL> 
+SQL> CREATE TABLE enrolment (
+  2      stu_nbr        NUMBER(8) NOT NULL,
+  3      unit_code      CHAR(7) NOT NULL,
+  4      enrol_year     NUMBER(4) NOT NULL,
+  5      enrol_semester CHAR(1) NOT NULL,
+  6      enrol_mark     NUMBER(3),
+  7      enrol_grade    CHAR(2)
+  8  );
+
+Error starting at line : 71 in command -
 CREATE TABLE enrolment (
     stu_nbr        NUMBER(8) NOT NULL,
     unit_code      CHAR(7) NOT NULL,
@@ -117,8 +117,8 @@ CREATE TABLE enrolment (
     enrol_grade    CHAR(2)
 )
 Error report -
-ORA-00904: : invalid identifier
-00904. 00000 -  "%s: invalid identifier"
+ORA-00955: name is already used by an existing object
+00955. 00000 -  "name is already used by an existing object"
 *Cause:    
 *Action:
 SQL> 
