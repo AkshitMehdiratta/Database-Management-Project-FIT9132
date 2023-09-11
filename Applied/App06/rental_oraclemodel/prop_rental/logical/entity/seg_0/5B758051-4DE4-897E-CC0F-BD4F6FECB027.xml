@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5B758051-4DE4-897E-CC0F-BD4F6FECB027" name="PAYMENT">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:31:41 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name=" pay_no" id="F5B8A37D-2974-EB92-89D2-E62EFE1190A1">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:32:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[payment number]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name=" pay_date" id="5818A627-F62B-D77D-74E0-66385B4B212E">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:32:33 UTC</createdTime>
+<commentInRDBMS><![CDATA[payment date]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pay_type" id="864F4C9F-3ED1-4AB7-F1E7-58E954BDF150">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:32:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[payment type]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<constraintName>CHK_PAY_TYPE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="B" description="bond"/>
+<valueDef value="D" description="damage"/>
+<valueDef value="R" description="rental"/>
+</listOfValues>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pay_amount" id="D5570591-4D15-C75E-157D-AFD1CEB7F556">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:33:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[amount]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pay_paid_by" id="E9DF0369-1E8F-19D8-5EAA-1148E1DFBD46">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:34:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[paid by]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_agreement_no1" id="9ECED794-AAF0-2D1D-CADA-3DD8D272321F">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:36:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[rent agreement number]]></commentInRDBMS>
+<generatorID>0446F3BA-D215-E90D-83B4-818D5393415A</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<referedAttribute>018067BA-46E5-8D4B-9B8A-77D87CFD7DFE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pay_paidby" id="9224AC9B-616C-6EFE-A778-1F614B47FB1D">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:08:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[paymethod_id]]></commentInRDBMS>
+<generatorID>7FEDD933-2B9E-9E62-006C-F3E0CB88D202</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<referedAttribute>A5C31B20-517A-DAA1-4BC7-79C0E889BCA8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="21513391-4C09-ECAA-ABC1-032E7AE3B783" name="PAYMENT PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:32:23 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F5B8A37D-2974-EB92-89D2-E62EFE1190A1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

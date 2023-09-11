@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C06C5729-86AF-635D-EFF8-2D0AAD9D5787" name="RENT">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:18:19 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rent_agreement_no" id="018067BA-46E5-8D4B-9B8A-77D87CFD7DFE">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:18:24 UTC</createdTime>
+<commentInRDBMS><![CDATA[rent agreement number]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_lease_start" id="3AB01AD5-57EA-AC2C-5F7A-4FD4350E6A20">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:23:31 UTC</createdTime>
+<commentInRDBMS><![CDATA[start date]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_weekly_rate" id="9FEC5C26-3775-3B6A-96B7-ADA8BA8E933A">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:24:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[weekly rate for rent]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_bond" id="07C7041E-9457-091F-E64E-31ED4C0D6F09">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:24:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[bond]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_lease_period" id="86AB4173-88F5-3D70-16D7-680414173A8A">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:25:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[lease period]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prop_no" id="AEF8F6C8-6FEB-2EAA-CD0C-8C4CCF175BA8">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:26:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[property number]]></commentInRDBMS>
+<generatorID>2CDD16B1-62B6-F81D-B6C5-0D31F51CB94F</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<referedAttribute>6FA564D1-74CF-A3F2-0042-EF4EBB407D92</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_no1" id="9AB44A9D-CA79-8DF0-43AE-F3CFEC93A5F8">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:45:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[tenant number]]></commentInRDBMS>
+<generatorID>9A00E51F-838D-1128-D7FA-96888063FEA3</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<referedAttribute>BDCCD31D-D90A-80B3-D8E0-0B533E7B60B0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B4C8C9FE-F434-1CE3-3137-608169E87909" name="RENT PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:18:57 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>018067BA-46E5-8D4B-9B8A-77D87CFD7DFE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

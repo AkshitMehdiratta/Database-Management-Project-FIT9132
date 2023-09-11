@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="45F80F5B-BB5F-1F91-FCA3-A12EA286EB9F" name="PAYMETHOD">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 22:59:30 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="paymethod_id" id="A5C31B20-517A-DAA1-4BC7-79C0E889BCA8">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:06:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[paymethod_id]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="paymethod_name" id="0999A925-321B-0E4E-CDC0-5A261A35C9AE">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:07:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[pay method type]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A18DEB02-F7E2-99AA-C1BA-D167D4CCA7DF" name="PAYMETHOD PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:00:06 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A5C31B20-517A-DAA1-4BC7-79C0E889BCA8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

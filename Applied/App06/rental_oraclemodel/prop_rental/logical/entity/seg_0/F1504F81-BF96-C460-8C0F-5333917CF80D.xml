@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F1504F81-BF96-C460-8C0F-5333917CF80D" name="OWNER">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 21:43:10 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="owner_no" id="7A0F7D39-EB19-0F24-D35B-CB6C7ED5FB7E">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 21:47:42 UTC</createdTime>
+<commentInRDBMS><![CDATA[owner number]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="owner_givname" id="9DBB4B5C-CFFF-9A09-D853-BBDA017233D6">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 21:48:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[owner given name]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="owner_famname" id="7BF7C402-B57D-D2D5-00A9-14CE31BC00BE">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 21:51:36 UTC</createdTime>
+<commentInRDBMS><![CDATA[owner family name]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="owner_address" id="F819A6AD-95F1-1735-7185-4373153B519A">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 21:52:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[owner address]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="719D4D01-CC2F-8CAE-DC52-753D0A9C42BE" name="CUSTOMER PK">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 21:48:12 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7A0F7D39-EB19-0F24-D35B-CB6C7ED5FB7E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

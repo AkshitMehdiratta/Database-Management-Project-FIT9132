@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="paymethod_pay" directorySegmentName="seg_0" id="7FEDD933-2B9E-9E62-006C-F3E0CB88D202">
+<createdBy>akaymehdiratta</createdBy>
+<createdTime>2023-09-11 23:08:58 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="B747311C-221A-E36B-6F0E-EEEBBFAE799A" value="true"/>
+</engineerTo>
+<targetTransferable>false</targetTransferable>
+<sourcePk>A18DEB02-F7E2-99AA-C1BA-D167D4CCA7DF</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>is_used_in</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>45F80F5B-BB5F-1F91-FCA3-A12EA286EB9F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5B758051-4DE4-897E-CC0F-BD4F6FECB027</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
