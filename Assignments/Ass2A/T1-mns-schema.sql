@@ -21,33 +21,42 @@
 
 
 
-
 -- TABLE: EMERGENCY_CONTACT
 
-Create Table emergency_contact (
+CREATE TABLE emergency_contact(
     ec_id    CHAR(10) NOT NULL,
     ec_fname VARCHAR2(20),
     ec_lname VARCHAR2(20),
     ec_phone CHAR(12) NOT NULL,
     CONSTRAINT emergency_contact_pk PRIMARY KEY ( ec_id ),
-    CONSTRAINT emergency_contact_uq UNIQUE ( ec_phone ));
+    CONSTRAINT emergency_contact_uq UNIQUE ( ec_phone )
+);
 
 -- TABLE: PATIENT
 
-Create Table patient (
-    patient_no CHAR(10) NOT NULL,
-    patient_fname VARCHAR2(20) NOT NULL,
-    patient_lname VARCHAR2(20) NOT NULL,
-    patient_street VARCHAR2(200) not null,
-    patient_city VARCHAR2(200) not null,
-    patient_state VARCHAR(3) NOT NULL,
-    patient_postcode CHAR(4) Not null,
-    patient_dob DATE NOT NULL,
+CREATE TABLE patient (
+    patient_no            CHAR(10) NOT NULL,
+    patient_fname         VARCHAR2(20) NOT NULL,
+    patient_lname         VARCHAR2(20) NOT NULL,
+    patient_street        VARCHAR2(200) NOT NULL,
+    patient_city          VARCHAR2(200) NOT NULL,
+    patient_state         VARCHAR(3) NOT NULL,
+    patient_postcode      CHAR(4) NOT NULL,
+    patient_dob           DATE NOT NULL,
     patient_contactmobile CHAR(12) NOT NULL,
-    patent_contactemail VARCHAR(100) NOT NULL,
-    ec_id    CHAR(10) NOT NULL);
-    
-Alter table patient add constraint patient_pk primary key (patient_no);
+    patent_contactemail   VARCHAR(100) NOT NULL,
+    ec_id                 CHAR(10) NOT NULL
+);
+
+-- adding primary key
+ALTER TABLE patient ADD CONSTRAINT patient_pk PRIMARY KEY ( patient_no );
+
+-- adding check constraint for state
+
+ALTER TABLE patient
+    ADD CONSTRAINT chk_patient_state
+            CHECK ( patient_state IN ('NT', 'QLD', 'NSW', 'ACT', 'VIC', 'TAS', 'SA', 'WA') );
+
     
 
 
