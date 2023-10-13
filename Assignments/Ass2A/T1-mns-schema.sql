@@ -104,7 +104,7 @@ CREATE TABLE patient (
     patient_postcode      CHAR(4) NOT NULL,
     patient_dob           DATE NOT NULL,
     patient_contactmobile CHAR(10) NOT NULL,
-    patent_contactemail   VARCHAR(25) NOT NULL,
+    patient_contactemail   VARCHAR(25) NOT NULL,
     ec_id                 NUMBER(4) NOT NULL
 );
 -- adding primary key
@@ -144,7 +144,7 @@ COMMENT ON COLUMN patient.patient_dob IS
 COMMENT ON COLUMN patient.patient_contactmobile IS
     'Patient contact mobile number';
 
-COMMENT ON COLUMN patient.patent_contactemail IS
+COMMENT ON COLUMN patient.patient_contactemail IS
     'Patient contact email address';
 
 COMMENT ON COLUMN patient.ec_id IS
