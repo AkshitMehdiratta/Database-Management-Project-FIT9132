@@ -8,7 +8,7 @@
 
 /* Comments for your marker:
 
-
+default on delete is Restrict
 
 
 */
@@ -154,4 +154,25 @@ COMMENT ON COLUMN patient.ec_id IS
 
 -- Add all missing FK Constraints below here
 
+-- for patient
+ALTER TABLE patient
+    ADD CONSTRAINT emergency_contact_patient FOREIGN KEY ( ec_id )
+        REFERENCES emergency_contact ( ec_id );
 
+-- for appointment
+ALTER TABLE appointment ADD (
+    CONSTRAINT patient_appointment FOREIGN KEY ( patient_no )
+        REFERENCES patient ( patient_no )
+);
+
+ALTER TABLE appointment
+    ADD CONSTRAINT provider_appointment FOREIGN KEY ( provider_code )
+        REFERENCES provider ( provider_code );
+
+ALTER TABLE appointment
+    ADD CONSTRAINT nurse_appointment FOREIGN KEY ( nurse_no )
+        REFERENCES nurse ( nurse_no );
+
+ALTER TABLE appointment
+    ADD CONSTRAINT appointment_appointment FOREIGN KEY ( appt_no )
+        REFERENCES appointment ( appt_no );
