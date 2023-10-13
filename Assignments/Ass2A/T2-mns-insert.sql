@@ -27,7 +27,277 @@ INSERT INTO emergency_contact (ec_id, ec_fname, ec_lname, ec_phone) VALUES (5, '
 --INSERT INTO patient
 --------------------------------------
 
+--adult 1
 
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    1,
+    'Akshit',
+    'Mehdiratta',
+    'Street 28',
+    'xyz',
+    'VIC',
+    '3168',
+    TO_DATE('31-DEC-1996', 'DD-MM-YYYY'),
+    '401518903',
+    'amehdiratta@gmail.com',
+    1
+);
+
+--adult 2
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    2,
+    'Javesh',
+    'Juneja',
+    'Street 29',
+    'qwe',
+    'TAS',
+    '7007',
+    TO_DATE('05-SEP-1994', 'DD-MM-YYYY'),
+    '4011011010',
+    'jjuneja@gmail.com',
+    1
+);
+
+
+-- adult 3
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    3,
+    'Tanay',
+    'Agarwal',
+    'Street 30',
+    'wer',
+    'SA',
+    '5800',
+    TO_DATE('30-MAY-1997', 'DD-MM-YYYY'),
+    '4011991999',
+    'tanayagar@gmail.com',
+    2
+);
+
+-- adult 4
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    4,
+    'Nikhil',
+    'Sopori',
+    'Street 99',
+    'erwt',
+    'WA',
+    '6151',
+    TO_DATE('08-June-1995', 'DD-MM-YYYY'),
+    '4088888888',
+    'nsopori@gmail.com',
+    2
+);
+
+-- adult 5
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    5,
+    'Kamal',
+    'Sukhija',
+    'Street 69',
+    'city',
+    'NT',
+    '0822',
+    TO_DATE('08-Oct-1999', 'DD-MM-YYYY'),
+    '4066669999',
+    'ksukh@gmail.com',
+    3
+);
+
+-- under age 1
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    6,
+    'Chip',
+    'McSnickerdoodle',
+    'Street 70',
+    'fift',
+    'QLD',
+    '4008',
+    TO_DATE('08-FEB-2010', 'DD-MM-YYYY'),
+    '4023452345',
+    'chips@gmail.com',
+    1
+);
+
+-- under age 2
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    7,
+    'Oreo',
+    'VanChoco',
+    'Street 71',
+    'fjgh',
+    'NSW',
+    '2839',
+    TO_DATE('30-Jan-2015', 'DD-MM-YYYY'),
+    '4067896789',
+    'oreovan@gmail.com',
+    2
+);
+
+-- under age 3
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    8,
+    'Macaroon',
+    'Almondini',
+    'Street 72',
+    'rest',
+    'ACT',
+    '2600',
+    TO_DATE('10-Jun-2009', 'DD-MM-YYYY'),
+    '4141419999',
+    'macaalmnd@gmail.com',
+    4
+);
+
+-- under age 4
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    9,
+    'Biscotti',
+    'Caramella',
+    'Street 7',
+    'uviiq',
+    'VIC',
+    '3166',
+    TO_DATE('16-Sep-2012', 'DD-MM-YYYY'),
+    '4019870900',
+    'bisco@gmail.com',
+    5
+);
+
+-- under age 5
+INSERT INTO patient (
+    patient_no,
+    patient_fname,
+    patient_lname,
+    patient_street,
+    patient_city,
+    patient_state,
+    patient_postcode,
+    patient_dob,
+    patient_contactmobile,
+    patient_contactemail,
+    ec_id
+) VALUES (
+    10,
+    'Brownie',
+    'Sugar',
+    'Street 33',
+    'city5',
+    'TAS',
+    '7017',
+    TO_DATE('18-aug-2017', 'DD-MM-YYYY'),
+    '4050431234',
+    'sweettooth@gmail.com',
+    5
+);
 --------------------------------------
 --INSERT INTO appointment
 --------------------------------------
