@@ -15,7 +15,9 @@
 
 
 --3(a)
-
+DROP
+CREATE SEQUENCE manuf_seq
+         START WITH 100 INCREMENT BY 1;
 
 --3(b)
 
