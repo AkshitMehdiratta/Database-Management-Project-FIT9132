@@ -1,10 +1,10 @@
 --*****PLEASE ENTER YOUR DETAILS BELOW*****
 --T3-mns-dm.sql
 
---Student ID:
---Student Name:
---Unit Code:
---Applied Class No:
+--Student ID: 34165479
+--Student Name: Akshit Mehdiratta
+--Unit Code: FIT9132
+--Applied Class No: 04_OnCampus
 
 /* Comments for your marker:
 
