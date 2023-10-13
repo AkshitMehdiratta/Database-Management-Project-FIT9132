@@ -65,15 +65,42 @@ b. Repeat students are only counted once across 2019.*/
 
 
 --5
+/* 5. Find the total number of prerequisite units for FIT5145.*/
 
+SELECT
+    *
+FROM
+    uni.prereq;
 
-
+SELECT
+    COUNT(prerequnitcode) as no_prereq
+FROM
+    uni.prereq
+WHERE
+    upper(unitcode) = 'FIT5145';
 
 --6
 
 
 
 --7
+/* Find the total number of prerequisite units for each unit which has prerequisites. Order the
+list by unit code..*/
+
+SELECT
+    *
+FROM
+    uni.prereq;
+
+SELECT unitcode
+    COUNT(*) AS no_prereq
+FROM
+    uni.prereq
+    group
+    by
+        unitcode;
+
+
 
 
 
@@ -91,14 +118,26 @@ b. Repeat students are only counted once across 2019.*/
 
 
 --11
-
-
+/*......*/
+SELECT
+    stuid ltrim(stufname || ' ' || stulname) as stufullname,
+to_char(studob, 'dd-Mon-yyyy') as dateofbirth
+select * from uni.student natural join uni.enrolment;
+where upper(unitcode) = 'FIT9132';
+and studob =
+(
+select min(studob) from uni.student natural join uni.enrolment
+where upper ( unitcode ) = 'FIT9132'
+);
+order by stuid;
 
 --12
 
 
 
 --13
+
+
 
 
 
