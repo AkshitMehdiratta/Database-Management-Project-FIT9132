@@ -357,57 +357,307 @@ INSERT INTO patient (
 --------------------------------------
 
 -- choosing first date as 30/05/2023
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (1, TO_DATE('30-05-23 13:00', 'DD-MM-YY HH24:MI'), 1, 'S', 1, 'END001', 9, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    1,
+    TO_DATE('30-05-23 13:00', 'DD-MM-YY HH24:MI'),
+    1,
+    'S',
+    1,
+    'END001',
+    9,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (2, TO_DATE('30-05-23 13:30', 'DD-MM-YY HH24:MI'), 2, 'T', 3, 'GEN001', 8, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    2,
+    TO_DATE('30-05-23 13:30', 'DD-MM-YY HH24:MI'),
+    2,
+    'T',
+    3,
+    'GEN001',
+    8,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (3, TO_DATE('30-05-23 15:00', 'DD-MM-YY HH24:MI'), 3, 'L', 2, 'GEN002', 7, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    3,
+    TO_DATE('30-05-23 15:00', 'DD-MM-YY HH24:MI'),
+    3,
+    'L',
+    2,
+    'GEN002',
+    7,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (4, TO_DATE('30-05-23 15:00', 'DD-MM-YY HH24:MI'), 4, 'S', 4, 'GEN003', 6, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    4,
+    TO_DATE('30-05-23 15:00', 'DD-MM-YY HH24:MI'),
+    4,
+    'S',
+    4,
+    'GEN003',
+    6,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (5, TO_DATE('30-05-23 16:00', 'DD-MM-YY HH24:MI'), 9, 'S', 5, 'AST001', 5, NULL);
-
-
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    5,
+    TO_DATE('30-05-23 16:00', 'DD-MM-YY HH24:MI'),
+    9,
+    'S',
+    5,
+    'AST001',
+    5,
+    NULL
+);
 
 -- choosing second date as 20/06/2023
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (6, TO_DATE('20-06-23 13:00', 'DD-MM-YY HH24:MI'), 11, 'L', 6, 'PER001', 8, 2);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    6,
+    TO_DATE('20-06-23 13:00', 'DD-MM-YY HH24:MI'),
+    11,
+    'L',
+    6,
+    'PER001',
+    8,
+    2
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (7, TO_DATE('20-06-23 15:00', 'DD-MM-YY HH24:MI'), 9, 'T', 7, 'AST001', 9, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    7,
+    TO_DATE('20-06-23 15:00', 'DD-MM-YY HH24:MI'),
+    9,
+    'T',
+    7,
+    'AST001',
+    9,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (8, TO_DATE('20-06-23 16:00', 'DD-MM-YY HH24:MI'), 4, 'S', 3, 'GEN003', 7, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    8,
+    TO_DATE('20-06-23 16:00', 'DD-MM-YY HH24:MI'),
+    4,
+    'S',
+    3,
+    'GEN003',
+    7,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (9, TO_DATE('20-06-23 16:00', 'DD-MM-YY HH24:MI'), 8, 'L', 1, 'ORT001', 5, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    9,
+    TO_DATE('20-06-23 16:00', 'DD-MM-YY HH24:MI'),
+    8,
+    'L',
+    1,
+    'ORT001',
+    5,
+    NULL
+);
 
-
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (10, TO_DATE('20-06-23 17:30', 'DD-MM-YY HH24:MI'), 6, 'S', 2, 'PED001', 6, NULL);
-
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    10,
+    TO_DATE('20-06-23 17:30', 'DD-MM-YY HH24:MI'),
+    6,
+    'S',
+    2,
+    'PED001',
+    6,
+    NULL
+);
 
 -- choosing THIRD date as 20/06/2023
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (11, TO_DATE('10-07-23 13:00', 'DD-MM-YY HH24:MI'), 5, 'T', 8, 'ORS001', 7, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    11,
+    TO_DATE('10-07-23 13:00', 'DD-MM-YY HH24:MI'),
+    5,
+    'T',
+    8,
+    'ORS001',
+    7,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (12, TO_DATE('10-07-23 14:00', 'DD-MM-YY HH24:MI'), 6, 'S', 9, 'PED001', 6, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    12,
+    TO_DATE('10-07-23 14:00', 'DD-MM-YY HH24:MI'),
+    6,
+    'S',
+    9,
+    'PED001',
+    6,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (13, TO_DATE('10-07-23 14:30', 'DD-MM-YY HH24:MI'), 7, 'L', 10, 'PED002', 9, 7);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    13,
+    TO_DATE('10-07-23 14:30', 'DD-MM-YY HH24:MI'),
+    7,
+    'L',
+    10,
+    'PED002',
+    9,
+    7
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (14, TO_DATE('10-07-23 16:30', 'DD-MM-YY HH24:MI'), 8, 'T', 6, 'ORT001', 8, NULL);
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    14,
+    TO_DATE('10-07-23 16:30', 'DD-MM-YY HH24:MI'),
+    8,
+    'T',
+    6,
+    'ORT001',
+    8,
+    NULL
+);
 
-INSERT INTO appointment (appt_no, appt_datetime, appt_roomno, appt_length, patient_no, provider_code, nurse_no, appt_prior_apptno) 
-VALUES (15, TO_DATE('10-07-23 17:30', 'DD-MM-YY HH24:MI'), 9, 'S', 7, 'AST001', 5, 3);
-
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    15,
+    TO_DATE('10-07-23 17:30', 'DD-MM-YY HH24:MI'),
+    9,
+    'S',
+    7,
+    'AST001',
+    5,
+    3
+);
 
 
 
