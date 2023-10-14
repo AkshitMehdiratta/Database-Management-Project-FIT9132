@@ -247,8 +247,15 @@ INSERT INTO appointment (
             AND upper(provider_lname) = 'STRIPLIN'
     ),
     'L',
-    ( SELECT patient_no FROM patient WHERE patient_fname = 'Lachlan' AND
-        patient_contactmobile = '4090954321' ),
+    (
+        SELECT
+            patient_no
+        FROM
+            patient
+        WHERE
+                patient_fname = 'Lachlan'
+            AND patient_contactmobile = '4090954321'
+    ),
     (
         SELECT
             provider_code
@@ -267,14 +274,34 @@ INSERT INTO appointment (
         WHERE
             ( nurse_no ) = '14'
     ),
-    (SELECT appt_no FROM appointment WHERE 
-        patient_no = (SELECT patient_no FROM patient WHERE patient_fname = 'Lachlan') AND
-        appt_datetime = TO_DATE('04-09-23 16:00', 'DD-MM-YY HH24:MI'))
+    (
+        SELECT
+            appt_no
+        FROM
+            appointment
+        WHERE
+                patient_no = (
+                    SELECT
+                        patient_no
+                    FROM
+                        patient
+                    WHERE
+                        patient_fname = 'Lachlan'
+                )
+            AND appt_datetime = TO_DATE('04-09-23 16:00', 'DD-MM-YY HH24:MI')
+    )
 );
 
 COMMIT;
 
 
 --3(d)
+
+UPDATE enrolment
+SET enrol_mark = 63, enrol_grade = 'C'
+WHERE stu_nbr = 11111111 AND
+     upper(unit_code) = upper('FIT9132') AND
+     enrol_semester = '1' AND
+     enrol_year = 2023;
 
 --3(e)
