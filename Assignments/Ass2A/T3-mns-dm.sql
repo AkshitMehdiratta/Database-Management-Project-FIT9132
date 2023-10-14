@@ -314,13 +314,13 @@ COMMIT;
 
 --3(e) Deleting appontments for Dr
 
-SELECT
-    *
-FROM
-    enrolment;
-
-DELETE FROM enrolment
-WHERE
-        stu_nbr = 11111114
-    AND enrol_semester = '1'
-    AND enrol_year = 2023;
+DELETE FROM appointment
+WHERE 
+    provider_code = (
+        SELECT provider_code
+        FROM provider
+        WHERE 
+            UPPER(provider_fname) = 'BRUCE' AND 
+            UPPER(provider_lname) = 'STRIPLIN'
+    ) AND 
+    TO_DATE('15-09-23', 'DD-MM-YY') < (appt_datetime)< TO_DATE('22-09-23', 'DD-MM-YY');
