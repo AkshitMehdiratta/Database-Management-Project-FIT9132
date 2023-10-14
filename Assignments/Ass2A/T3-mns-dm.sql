@@ -315,13 +315,18 @@ COMMIT;
 --3(e) Deleting appontments for Dr
 
 DELETE FROM appointment
-WHERE 
-    provider_code = (
-        SELECT provider_code
-        FROM provider
-        WHERE
-                upper(provider_title) = 'DR'
-            AND upper(provider_fname) = 'BRUCE'
-            AND upper(provider_lname) = 'STRIPLIN'
-    ) AND 
-    TO_DATE('15-09-23', 'DD-MM-YY') < (appt_datetime)< TO_DATE('22-09-23', 'DD-MM-YY');
+WHERE
+        provider_code = (
+            SELECT
+                provider_code
+            FROM
+                provider
+            WHERE
+                    upper(provider_title) = 'DR'
+                AND upper(provider_fname) = 'BRUCE'
+                AND upper(provider_lname) = 'STRIPLIN'
+        )
+    AND ( appt_datetime ) BETWEEN TO_DATE('22-09-23', 'DD-MM-YY') AND TO_DATE('15-09-23'
+    , 'DD-MM-YY');
+
+COMMIT;
