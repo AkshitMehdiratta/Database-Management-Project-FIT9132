@@ -220,7 +220,60 @@ INSERT INTO appointment (
 );
 
 COMMIT;
+
+
 --3(c)
+
+INSERT INTO appointment (
+    appt_no,
+    appt_datetime,
+    appt_roomno,
+    appt_length,
+    patient_no,
+    provider_code,
+    nurse_no,
+    appt_prior_apptno
+) VALUES (
+    appointment_seq.NEXTVAL,
+    TO_DATE('14-09-23 16:00', 'DD-MM-YY HH24:MI'),
+    (
+        SELECT
+            provider_roomno
+        FROM
+            provider
+        WHERE
+                upper(provider_title) = 'DR'
+            AND upper(provider_fname) = 'BRUCE'
+            AND upper(provider_lname) = 'STRIPLIN'
+    ),
+    'L',
+    ( SELECT patient_no FROM patient WHERE patient_fname = 'Lachlan' AND
+        patient_contactmobile = '4090954321' ),
+    (
+        SELECT
+            provider_code
+        FROM
+            provider
+        WHERE
+                upper(provider_title) = 'DR'
+            AND upper(provider_fname) = 'BRUCE'
+            AND upper(provider_lname) = 'STRIPLIN'
+    ),
+    (
+        SELECT
+            nurse_no
+        FROM
+            nurse
+        WHERE
+            ( nurse_no ) = '14'
+    ),
+    (SELECT appt_no FROM appointment WHERE 
+        patient_no = (SELECT patient_no FROM patient WHERE patient_fname = 'Lachlan') AND
+        appt_datetime = TO_DATE('04-09-23 16:00', 'DD-MM-YY HH24:MI'))
+);
+
+COMMIT;
+
 
 --3(d)
 
