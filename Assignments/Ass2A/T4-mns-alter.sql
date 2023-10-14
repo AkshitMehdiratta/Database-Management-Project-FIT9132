@@ -14,8 +14,8 @@
 */
 
 --4(a)
-ALTER TABLE training_course ADD (
-     traincourse_type CHAR(1) DEFAULT 'P' NOT NULL,
+ALTER TABLE patient ADD (
+     total_no_appt Number(1000);
 
 --4(b)
 
