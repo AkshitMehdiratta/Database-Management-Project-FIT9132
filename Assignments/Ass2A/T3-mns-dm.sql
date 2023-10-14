@@ -319,8 +319,9 @@ WHERE
     provider_code = (
         SELECT provider_code
         FROM provider
-        WHERE 
-            UPPER(provider_fname) = 'BRUCE' AND 
-            UPPER(provider_lname) = 'STRIPLIN'
+        WHERE
+                upper(provider_title) = 'DR'
+            AND upper(provider_fname) = 'BRUCE'
+            AND upper(provider_lname) = 'STRIPLIN'
     ) AND 
     TO_DATE('15-09-23', 'DD-MM-YY') < (appt_datetime)< TO_DATE('22-09-23', 'DD-MM-YY');
