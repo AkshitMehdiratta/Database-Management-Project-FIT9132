@@ -15,7 +15,7 @@
 
 --4(a)
 
-ALTER TABLE patient DROP Column total_no_appt;
+--- ALTER TABLE patient DROP Column total_no_appt;
 
 ALTER TABLE patient ADD (
     total_no_appt NUMBER(3)
@@ -30,10 +30,29 @@ SET
             where a.patient_no = p.patient_no
             group By p.patient_no
     );
-    
+select patient_no, total_no_appt from patient;    
 DESC patient;
---4(b)
 
+--4(b)
+DROP TABLE patient_ec CASCADE CONSTRAINTS;
+
+CREATE TABLE patient_ec (
+    ec_id    NUMBER(4) NOT NULL,
+    patient_no    NUMBER(4) NOT NULL,
+    patient_ec_id Number(4) Not Null,  
+    -- adding pk and unique constraint
+    CONSTRAINT patient_ec_pk PRIMARY KEY ( patient_ec_id ));
+
+-- adding foreign keys for patient_emergency_contact
+
+ALTER TABLE patient_ec ADD CONSTRAINT patient_patient_ec_fk foreign key (patient_no) REFERENCES patient(patient_no);
+ALTER TABLE patient_ec ADD CONSTRAINT emergency_contact_patient_ec_fk foreign key (ec_id) REFERENCES emergency_contact(ec_id);
+
+-- deleting column ec_id associated to table patient
+
+ALTER TABLE patient DROP COLUMN ec_id;
+
+DESC patient_ec;
 
 --4(c)
 CREATE TABLE nurse_training_log_book (
