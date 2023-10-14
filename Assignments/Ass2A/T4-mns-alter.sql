@@ -34,6 +34,7 @@ select patient_no, total_no_appt from patient;
 DESC patient;
 
 --4(b)
+
 DROP TABLE patient_ec CASCADE CONSTRAINTS;
 
 CREATE TABLE patient_ec (
@@ -54,50 +55,33 @@ ALTER TABLE patient DROP COLUMN ec_id;
 
 DESC patient_ec;
 
+
+
+
 --4(c)
-CREATE TABLE nurse_training_log_book (
-    appt_no           NUMBER(7) NOT NULL,
-    appt_datetime     DATE NOT NULL,
-    appt_roomno       NUMBER(2) NOT NULL,
-    appt_length       CHAR(1) NOT NULL,
-    patient_no        NUMBER(4) NOT NULL,
-    provider_code     CHAR(6) NOT NULL,
-    nurse_no          NUMBER(3) NOT NULL,
-    appt_prior_apptno NUMBER(7)
+
+DROP TABLE nurse_training CASCADE CONSTRAINTS;
+
+CREATE TABLE nurse_training (
+    training_id       NUMBER(10) not null,
+    trainer_nurse_no  NUMBER(3) NOT NULL,
+    trainer_nurse_fname VARCHAR2(30),
+    trainer_nurse_lname VARCHAR2(30),
+    trainee_nurse_no  NUMBER(3) NOT NULL,
+    training_start_date Date not null,
+    training_end_date date not null,
+    training_desc varchar2(200) not null
 );
--- adding primary key
-ALTER TABLE appointment ADD CONSTRAINT appointment_pk PRIMARY KEY ( appt_no );
 
--- adding unique constraint
-ALTER TABLE appointment ADD CONSTRAINT appointment_uq UNIQUE (appt_datetime, appt_roomno,patient_no, provider_code, appt_prior_apptno );
+-- adding constraints for fk and pk using alter table
+Alter table nurse_training add constraint  nurse_training_pk PRIMARY KEY ( training_id );
+Alter table nurse_training add constraint  nurse_trainer_nurse_no_fk foreign KEY ( trainer_nurse_no ) REFERENCES nurse(nurse_no);
+Alter table nurse_training add constraint  nurse_trainee_nurse_no_fk foreign KEY ( trainee_nurse_no ) REFERENCES nurse(nurse_no);
 
--- adding check constraint
-ALTER TABLE appointment
-    ADD CONSTRAINT chk_appt_length
-            CHECK ( appt_length IN ('S', 'T', 'L') );
 
--- adding comments
-COMMENT ON COLUMN appointment.appt_no IS
-    'Appointment number';
 
-COMMENT ON COLUMN appointment.appt_datetime IS
-    'Date and time of the appointment';
-
-COMMENT ON COLUMN appointment.appt_roomno IS
-    'Room in which appointment is scheduled to take place';
-
-COMMENT ON COLUMN appointment.appt_length IS
-    'Length of appointment - Short, Standard or Long (S, T or L)';
-
-COMMENT ON COLUMN appointment.patient_no IS
-    'Patient who books the appointment';
-
-COMMENT ON COLUMN appointment.provider_code IS
-    'Provider who is assigned to the appointment';
-
-COMMENT ON COLUMN appointment.nurse_no IS
-    'Nurse who is assigned to the appointment';
-
-COMMENT ON COLUMN appointment.appt_prior_apptno IS
-    'Prior appointment number which leads to this appointment'; 
+-- trainee cant be trainer
+ALTER TABLE nurse_training
+    ADD CONSTRAINT chk_nurse_training
+            CHECK ( trainer_nurse_no is not trainee_nurse_no );
 
