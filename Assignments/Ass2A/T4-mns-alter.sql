@@ -83,5 +83,5 @@ Alter table nurse_training add constraint  nurse_trainee_nurse_no_fk foreign KEY
 -- trainee cant be trainer
 ALTER TABLE nurse_training
     ADD CONSTRAINT chk_nurse_training
-            CHECK ( trainer_nurse_no is not trainee_nurse_no );
+            CHECK ( trainer_nurse_no != trainee_nurse_no );
 
