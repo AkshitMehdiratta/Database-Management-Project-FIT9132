@@ -63,17 +63,55 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-select service_code, service_desc, lpad(to_char(service_stdfee, '$99990.99'),15) as Service_Fee
-from mns.service
-where service_stdfee > (select (avg(service_stdfee)) from mns.service)
-order by service_stdfee DESC, service_code;
+SELECT
+    service_code,
+    service_desc,
+    lpad(to_char(service_stdfee, '$99990.99'),
+         15) AS service_fee
+FROM
+    mns.service
+WHERE
+    service_stdfee > (
+        SELECT
+            ( AVG(service_stdfee) )
+        FROM
+            mns.service
+    )
+ORDER BY
+    service_stdfee DESC,
+    service_code;
 
 
 /*2(d)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
-
+SELECT
+    s.staffid,
+    stafffname,
+    stafflname,
+    ofsemester,
+    COUNT(*) AS numberclasses,
+    CASE
+        WHEN COUNT(*) > 2 THEN
+            'Overload'
+        WHEN COUNT(*) = 2 THEN
+            'Correct load'
+        ELSE
+            'Underload'
+    END AS load
+FROM
+    uni.schedclass   c
+    JOIN uni.staff        s ON s.staffid = c.staffid
+WHERE
+    to_char(ofyear, 'yyyy') = '2019'
+GROUP BY
+    s.staffid,
+    stafffname,
+    stafflname,
+    ofsemester
+ORDER BY
+    numberclasses DESC, staffid, ofsemester;
 
 /*2(e)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
