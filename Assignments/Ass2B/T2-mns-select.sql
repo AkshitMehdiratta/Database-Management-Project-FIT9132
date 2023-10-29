@@ -63,7 +63,7 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-select service_code, service_desc, to_char(service_stdfee, '$99990.99')
+select service_code, service_desc, lpad(to_char(service_stdfee, '$99990.99'),15) as Service_Fee
 from mns.service
 where service_stdfee > (select (avg(service_stdfee)) from mns.service)
 order by service_stdfee DESC, service_code;
