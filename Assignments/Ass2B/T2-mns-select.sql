@@ -18,8 +18,19 @@
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-Select item_id, item_desc, item_stdcost, item_stock from mns.item where item_stock>50 and item_desc LIKE 'composite%'
-order by item_stock DESC, id;
+SELECT
+    item_id,
+    item_desc,
+    item_stdcost,
+    item_stock
+FROM
+    mns.item
+WHERE
+        item_stock > 50
+    AND item_desc LIKE '%composite%'
+ORDER BY
+    item_stock DESC,
+    item_id;
 
 
 
@@ -28,7 +39,21 @@ order by item_stock DESC, id;
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-
+SELECT p.provider_code,
+    rpad(p.provider_title
+         || '. '
+         || p.provider_fname
+         || ' '
+         || p.provider_lname, 40, ' ')
+FROM
+         MNS.provider p
+    JOIN MNS.specialisation s
+    ON p.spec_id = s.spec_id
+WHERE UPPER(s.spec_name) = UPPER('PAEDIATRIC DENTISTRY')
+ORDER BY
+    p.provider_lname,
+    p.provider_fname,
+    p.provider_code;
 /*2(c)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
 -- ENSURE that your query is formatted and has a semicolon
