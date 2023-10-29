@@ -88,23 +88,50 @@ ORDER BY
 -- (;) at the end of this answer
 
 SELECT
-a.appt_no as Appointment_Number,
-a.appt_datetime as Appointment_DateTime,
-a.patient_no as Patient_Number,
-(p.patient_fname || ' ' || p.patient_lname) as Patient_Full_Name,
-to_char(
-(sum(s.apptserv_fee) + sum(s.apptserv_itemcost)),'$99990.99'
-) as "Appointment_Total_Cost"
-from
-mns.appointments a
-join mns.patients p on a.patient_no = p.patient_no
-join mns.appt_serv s on a.appt_no = s.appt_no
-group by
-Appointment_Number, Appointment_DateTime, Patient_Number, Patient_Full_Name, Appointment_Total_Cost
-Having
-(SUM(s.apptserv_fee) + SUM(s.apptserv_itemcost)) = max(+)
-order by
-Appointment_Number
+    a.appt_no                                         AS appointment_number,
+    to_char(a.appt_datetime, 'YYYY-MM-DD HH24:MI:SS') AS appointment_date_time,
+    a.patient_no                                      AS patient_number,
+    ( p.patient_fname
+      || ' '
+      || p.patient_lname )                              AS patient_full_name,
+    lpad(to_char(SUM(s.apptserv_fee + s.apptserv_itemcost),
+                 '$99990.99'),
+         30)                                          AS appointment_total_cost
+FROM
+         mns.appointment a
+    JOIN mns.patient   p
+    ON a.patient_no = p.patient_no
+    JOIN mns.appt_serv s
+    ON a.appt_no = s.appt_no
+WHERE
+    (
+        SELECT
+            SUM(apptserv_fee) + SUM(apptserv_itemcost)
+        FROM
+            mns.appt_serv
+        WHERE
+            appt_no = a.appt_no
+    ) = (
+        SELECT
+            MAX(SUM(apptserv_fee) + SUM(apptserv_itemcost))
+        FROM
+            mns.appt_serv
+        GROUP BY
+            appt_no
+    )
+GROUP BY
+    a.appt_no,
+    a.appt_datetime,
+    a.patient_no,
+    (
+        p.patient_fname
+        || ' '
+        || p.patient_lname
+    )
+ORDER BY
+    appointment_number;
+
+
 
 /*2(e)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
