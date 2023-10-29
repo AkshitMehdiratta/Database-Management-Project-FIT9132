@@ -86,32 +86,25 @@ ORDER BY
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
+
 SELECT
-    s.staffid,
-    stafffname,
-    stafflname,
-    ofsemester,
-    COUNT(*) AS numberclasses,
-    CASE
-        WHEN COUNT(*) > 2 THEN
-            'Overload'
-        WHEN COUNT(*) = 2 THEN
-            'Correct load'
-        ELSE
-            'Underload'
-    END AS load
-FROM
-    uni.schedclass   c
-    JOIN uni.staff        s ON s.staffid = c.staffid
-WHERE
-    to_char(ofyear, 'yyyy') = '2019'
-GROUP BY
-    s.staffid,
-    stafffname,
-    stafflname,
-    ofsemester
-ORDER BY
-    numberclasses DESC, staffid, ofsemester;
+a.appt_no as Appointment_Number,
+a.appt_datetime as Appointment_DateTime,
+a.patient_no as Patient_Number,
+(p.patient_fname || ' ' || p.patient_lname) as Patient_Full_Name,
+to_char(
+(sum(s.apptserv_fee) + sum(s.apptserv_itemcost)),'$99990.99'
+) as "Appointment_Total_Cost"
+from
+mns.appointments a
+join mns.patients p on a.patient_no = p.patient_no
+join mns.appt_serv s on a.appt_no = s.appt_no
+group by
+Appointment_Number, Appointment_DateTime, Patient_Number, Patient_Full_Name, Appointment_Total_Cost
+Having
+(SUM(s.apptserv_fee) + SUM(s.apptserv_itemcost)) = max(+)
+order by
+Appointment_Number
 
 /*2(e)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
