@@ -39,26 +39,34 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-SELECT p.provider_code,
+SELECT
+    p.provider_code,
     rpad(p.provider_title
          || '. '
          || p.provider_fname
          || ' '
-         || p.provider_lname, 40, ' ')
+         || p.provider_lname, 40, ' ') AS "Provider Name"
 FROM
-         MNS.provider p
-    JOIN MNS.specialisation s
+         mns.provider p
+    JOIN mns.specialisation s
     ON p.spec_id = s.spec_id
-WHERE UPPER(s.spec_name) = UPPER('PAEDIATRIC DENTISTRY')
+WHERE
+    upper(s.spec_name) = upper('PAEDIATRIC DENTISTRY')
 ORDER BY
     p.provider_lname,
     p.provider_fname,
     p.provider_code;
+    
+    
 /*2(c)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
+select service_code, service_desc, to_char(service_stdfee, '$99990.99')
+from mns.service
+where service_stdfee > (select (avg(service_stdfee)) from mns.service)
+order by service_stdfee DESC, service_code;
 
 
 /*2(d)*/
