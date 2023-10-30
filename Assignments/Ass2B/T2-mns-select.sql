@@ -138,6 +138,20 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
+Select
+a.service_code,s.service_desc as service_description,
+s.service_stdfee as standard_fee,
+avg(a.apptserv_fee - s.service_stdfee) as service_fee_differential
+
+from
+    (
+select appt_no,service_code,apptserv_fee
+from mns.appt_serv
+    ) a
+    
+join mns.service s on a.service_code = s.service_code
+group by a.service_code, s.service_desc, s.service_stdfee
+order by a.service_code;
 
 
 /*2(f)*/
