@@ -170,7 +170,16 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-
+select
+p as patient_number
+p as patientname
+extract from p (operation - ) as currentage
+count(a.appt_no) as numappts
+count(a.appt_prior_apptno condition)/countt(a.appt_no)as followups
+from p
+left join a on p =a 
+group by
+order by
 
 /*2(g)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
