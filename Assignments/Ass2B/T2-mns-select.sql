@@ -138,22 +138,33 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-Select
-a.service_code,s.service_desc as service_description,
-s.service_stdfee as standard_fee,
-avg(a.apptserv_fee - s.service_stdfee) as service_fee_differential
-
-from
-    (
-select appt_no,service_code,apptserv_fee
-from mns.appt_serv
+SELECT
+    a.service_code,
+    s.service_desc AS service_description,
+    lpad(to_char(s.service_stdfee, '$99990.99'),
+         17)       AS standard_fee,
+    lpad(to_char(AVG(a.apptserv_fee - s.service_stdfee),
+                 '$99990.99'),
+         29)       AS service_fee_differential
+FROM
+         (
+        SELECT
+            appt_no,
+            service_code,
+            apptserv_fee
+        FROM
+            mns.appt_serv
     ) a
+    JOIN mns.service s
+    ON a.service_code = s.service_code
+GROUP BY
+    a.service_code,
+    s.service_desc,
+    lpad(to_char(s.service_stdfee, '$99990.99'),
+         17)
+ORDER BY
+    a.service_code;
     
-join mns.service s on a.service_code = s.service_code
-group by a.service_code, s.service_desc, s.service_stdfee
-order by a.service_code;
-
-
 /*2(f)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
 -- ENSURE that your query is formatted and has a semicolon
