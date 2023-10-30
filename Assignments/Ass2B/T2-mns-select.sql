@@ -170,18 +170,47 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 
-select
-p as patient_number
-p as patientname
-extract from p (operation - ) as currentage
-count(a.appt_no) as numappts
-count(a.appt_prior_apptno condition)/countt(a.appt_no)as followups
-from p
-left join a on p =a 
-group by
-order by
+SELECT
+    p.patient_no                                                           AS patient_number
+    ,
+    rpad(p.patient_fname
+         || ' '
+         || p.patient_lname, 20)                                                AS patientname
+         ,
+    ( EXTRACT(YEAR FROM current_date) - EXTRACT(YEAR FROM p.patient_dob) ) AS currentage
+    ,
+    COUNT(a.appt_no)                                                       AS numappts
+    ,
+    lpad(to_char((SUM(
+        CASE
+            WHEN a.appt_prior_apptno IS NOT NULL THEN
+                1
+            ELSE
+                0
+        END
+    ) * 100.0) / COUNT(a.appt_no),
+                 '990.9')
+         || '%',
+         13)                                                               AS followups
+FROM
+    mns.patient     p
+    LEFT JOIN mns.appointment a
+    ON p.patient_no = a.patient_no
+GROUP BY
+    p.patient_no,
+    p.patient_fname,
+    p.patient_lname,
+    p.patient_dob
+ORDER BY
+    p.patient_no;
 
 /*2(g)*/
 -- PLEASE PLACE REQUIRED SQL SELECT STATEMENT FOR THIS PART HERE
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
+SELECT
+p.provider_code as PCODE,
+select rent_no, drone_id, rent_out_dt, nvl(rent_in_dt,'Still out') from drone.rental;
+NVL(TO_CHAR(COUNT(DISTINCT a.appt_no)), '-') as NUMBERAPPTS,
+NVL(TO_CHAR(NVL(SUM(a.apptserv_fee), 0), '99990.00'), '-') as TOTALFEES,
+NVL(TO_CHAR(SUM(CASE WHEN asi.as_id IS NOT NULL THEN 1 ELSE 0 END), '99999'), '-') as NOITEMS
