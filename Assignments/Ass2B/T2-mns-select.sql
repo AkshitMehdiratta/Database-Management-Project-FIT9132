@@ -209,8 +209,42 @@ ORDER BY
 -- ENSURE that your query is formatted and has a semicolon
 -- (;) at the end of this answer
 SELECT
-p.provider_code as PCODE,
-select rent_no, drone_id, rent_out_dt, nvl(rent_in_dt,'Still out') from drone.rental;
-NVL(TO_CHAR(COUNT(DISTINCT a.appt_no)), '-') as NUMBERAPPTS,
-NVL(TO_CHAR(NVL(SUM(a.apptserv_fee), 0), '99990.00'), '-') as TOTALFEES,
-NVL(TO_CHAR(SUM(CASE WHEN asi.as_id IS NOT NULL THEN 1 ELSE 0 END), '99999'), '-') as NOITEMS
+    p.provider_code AS pcode,
+    nvl(to_char(COUNT(DISTINCT a.appt_no)),
+        '-')        AS numberappts,
+    nvl(to_char(nvl(SUM(a.apptserv_fee),
+                    0),
+                '99990.00'),
+        '-')        AS totalfees,
+    nvl(to_char(SUM(
+        CASE
+            WHEN asitem.as_id IS NOT NULL THEN
+                1
+            ELSE
+                0
+        END
+    ),
+                '99999'),
+        '-')        AS noitems
+FROM
+    mns.provider         p
+    LEFT JOIN (
+        SELECT
+            a.provider_code,
+            aptserve.appt_no,
+            aptserve.apptserv_fee
+        FROM
+                 mns.appointment a
+            JOIN mns.appt_serv aptserve
+            ON a.appt_no = aptserve.appt_no
+        WHERE
+            a.appt_datetime BETWEEN TO_DATE('2023-09-10 09:00:00', 'YYYY-MM-DD HH24:MI:SS'
+            ) AND TO_DATE('2023-09-14 17:00:00', 'YYYY-MM-DD HH24:MI:SS')
+    )                    a
+    ON p.provider_code = a.provider_code
+    LEFT JOIN mns.apptservice_item asitem
+    ON a.appt_no = asitem.as_id
+GROUP BY
+    p.provider_code
+ORDER BY
+    p.provider_code;
