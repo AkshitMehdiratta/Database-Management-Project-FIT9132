@@ -210,22 +210,18 @@ ORDER BY
 -- (;) at the end of this answer
 SELECT
     p.provider_code AS pcode,
-    nvl(to_char(COUNT(DISTINCT a.appt_no)),
-        '-')        AS numberappts,
-    nvl(to_char(nvl(SUM(a.apptserv_fee),
-                    0),
-                '99990.00'),
-        '-')        AS totalfees,
-    nvl(to_char(SUM(
-        CASE
-            WHEN asitem.as_id IS NOT NULL THEN
-                1
-            ELSE
-                0
-        END
-    ),
-                '99999'),
-        '-')        AS noitems
+    CASE
+        WHEN COUNT(DISTINCT a.appt_no) IS NULL THEN '-'
+        ELSE LPAD(TO_CHAR(COUNT(DISTINCT a.appt_no), '99999'),16)
+    END AS numberappts,
+    CASE
+        WHEN SUM(a.apptserv_fee) IS NULL THEN lpad('-',13)
+        ELSE LPAD('$' || TO_CHAR(SUM(a.apptserv_fee), '99990.00'), 13)
+    END AS totalfees,
+   CASE
+        WHEN SUM(CASE WHEN asitem.as_id IS NOT NULL THEN 1 ELSE 0 END) = 0 THEN lpad('-',11)
+        ELSE LPAD(TO_CHAR(SUM(CASE WHEN asitem.as_id IS NOT NULL THEN 1 ELSE 0 END), '99999'),11)
+    END AS noitems
 FROM
     mns.provider         p
     LEFT JOIN (
