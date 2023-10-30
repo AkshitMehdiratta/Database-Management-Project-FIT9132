@@ -66,8 +66,11 @@ db.appt_info.find();
 // PLEASE PLACE REQUIRED MONGODB COMMAND/S FOR THIS PART HERE
 // ENSURE that your query is formatted and has a semicolon
 // (;) at the end of this answer
+//use("ameh0025");
 
-
+db.appt_info.find(
+    { $or: [{ "items.quantity": { $gt: 2 } }, { "item_totalcost": { $gt: 50 } }] })
+    ;
 
 // 3(d)
 // PLEASE PLACE REQUIRED MONGODB COMMAND/S FOR THIS PART HERE
