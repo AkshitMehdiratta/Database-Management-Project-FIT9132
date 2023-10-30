@@ -31,7 +31,7 @@ SELECT
                                           || p.provider_fname
                                           || ' '
                                           || p.provider_lname,
-                    'item_totalcost' VALUE nvl(SUM(i.item_stdcost * ai.as_item_quantity
+                    'item_totalcost' VALUE nvl(SUM(i.item_stdcost * asi.as_item_quantity
                     ),
                                                0),
                     'no_of_items' VALUE COUNT(i.item_id),
@@ -47,12 +47,12 @@ SELECT
         || ','
 FROM
          mns.appointment a
-    JOIN mns.apptservice_item ai
-    ON a.appt_no = ai.as_id
+    JOIN mns.apptservice_item asi
+    ON a.appt_no = asi.as_id
     JOIN mns.provider         p
     ON a.provider_code = p.provider_code
     JOIN mns.item             i
-    ON ai.item_id = i.item_id
+    ON asi.item_id = i.item_id
 GROUP BY
     a.appt_no,
     a.appt_datetime,
