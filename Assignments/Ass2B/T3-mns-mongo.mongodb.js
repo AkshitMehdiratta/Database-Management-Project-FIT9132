@@ -76,15 +76,64 @@ db.appt_info.find(
 // PLEASE PLACE REQUIRED MONGODB COMMAND/S FOR THIS PART HERE
 // ENSURE that your query is formatted and has a semicolon
 // (;) at the end of this answer
+//use("ameh0025");
+db.appt_info.updateMany({ "items.id": 1 }, { $set: { "items.$.desc": "Paper points" } });
 
 
 // Illustrate/confirm changes made
-
+//use("ameh0025");
+db.appt_info.find({ "items.id": 1 }, { "items.id": 1, "items.desc": 1 });
 
 // 3(e)
 // PLEASE PLACE REQUIRED MONGODB COMMAND/S FOR THIS PART HERE
 // ENSURE that your query is formatted and has a semicolon
 // (;) at the end of this answer
+//db.enrolment.updateOne(
 
+//EDTA Cleansing Gel 17% (item id: 3, standard cost: $8) x 1 used
+//use("ameh0025");
+db.appt_info.updateOne({ "_id": 20 },
+    {
+        $push: {
+            "items": {
+                "id": 3,
+                "desc": "EDTA Cleansing Gel 17%",
+                "standardcost": 8,
+                "quantity": 1
+            }
+        }
+    }
+);
+
+//Irrigation Solution 2% Chlorhexidine (item id: 4, standard cost: $9) x 1 used
+//use("ameh0025");
+db.appt_info.updateOne({ "_id": 20 },
+    {
+        $push: {
+            "items": {
+                "id": 4,
+                "desc": "Irrigation Solution 2% Chlorhexidine",
+                "standardcost": 9,
+                "quantity": 1
+            }
+        }
+    }
+);
+//Irrigation Needle and Syringe (item id: 8, standard cost: $2) x 2 used.
+//use("ameh0025");
+db.appt_info.updateOne({ "_id": 20 },
+    {
+        $push: {
+            "items": {
+                "id": 8,
+                "desc": "Irrigation Needle and Syringe",
+                "standardcost": 2,
+                "quantity": 2
+            }
+        }
+    }
+);
 
 // Illustrate/confirm changes made
+use("ameh0025");
+db.appt_info.find({ "_id": 20 });
